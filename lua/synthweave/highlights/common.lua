@@ -1,6 +1,6 @@
 ---@param c Palette
 local function setup(c)
-	local groups = {
+	return {
 		ColorColumn = { bg = c.bg1 }, -- ColorColumn	Used for the columns set with 'colorcolumn'.
 		Conceal = { fg = c.fg, bg = c.bg0 }, -- Conceal		Placeholder characters substituted for concealed
 		CurSearch = { reverse = true }, -- CurSearch	Used for highlighting a search pattern under the cursor
@@ -36,8 +36,8 @@ local function setup(c)
 		MsgArea = {}, -- MsgArea		Area for messages and cmdline.
 		NonText = { fg = c.bg2 }, -- NonText		'@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		Normal = { fg = c.fg, bg = c.bg0 }, -- Normal		Normal text.
-		NormalFloat = { bg = c.raisin0 }, -- NormalFloat	Normal text in floating windows.
-		NormalNC = {}, -- NormalNC     = { bg = c.raisin_blacker }, -- NormalNC	Normal text in non-current windows.
+		NormalFloat = { bg = c.bg0 }, -- NormalFloat	Normal text in floating windows.
+		NormalNC = {}, -- NormalNC	Normal text in non-current windows.
 		Pmenu = { bg = c.bg0 }, -- Pmenu		Popup menu: Normal item.
 		PmenuExtra = { link = "Pmenu" }, -- PmenuExtra	Popup menu: Normal item "extra text".
 		PmenuExtraSel = { link = "PmenuSel" }, -- PmenuExtraSel	Popup menu: Selected item "extra text".
@@ -51,8 +51,8 @@ local function setup(c)
 		Search = { fg = c.green_bright, reverse = true }, -- Search		Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
 		SignColumn = {}, -- SignColumn	Column where |signs| are displayed.
 		SpecialKey = { fg = c.green_bright }, -- SpecialKey	Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
-		StatusLineNC = { reverse = true }, -- StatusLineNC	Status lines of not-current windows. Note: If this is equal to "StatusLine", Vim will use "^^^" in the status line of the current window.
-		StatusLine = { bold = true, reverse = true }, -- StatusLine	Status line of current window.
+		StatusLine = { bg = c.bg1 }, -- StatusLine	Status line of current window.
+		StatusLineNC = { fg = c.gray, bg = c.bg0, italic = true }, -- StatusLineNC	Status lines of not-current windows. Note: If this is equal to "StatusLine", Vim will use "^^^" in the status line of the current window.
 		Substitute = { fg = c.raisin0, bg = c.carrot }, -- Substitute	|:substitute| replacement text highlighting.
 		TabLine = { bg = c.bg0 }, -- TabLine		Tab pages line, not active tab page label.
 		TabLineFill = { bg = c.bg0 }, -- TabLineFill	Tab pages line, where there are no labels.
@@ -62,19 +62,12 @@ local function setup(c)
 		Title = { fg = c.carrot }, -- Title		Titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = c.visual }, -- Visual		Visual mode selection.
 		WarningMsg = { fg = c.yellow }, -- WarningMsg	Warning messages.
-		Whitespace = { fg = c.bg2 }, -- Whitespace	"nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
+		Whitespace = { fg = c.bg1 }, -- Whitespace	"nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
 		WildMenu = { fg = c.raisin0, bg = c.yellow }, -- WildMenu	Current match in 'wildmenu' completion.
-		WinBar = { bold = true }, -- WinBar		Window bar of current window.
-		WinBarNC = {}, -- WinBarNC	Window bar of not-current windows.
+		WinBarNC = { link = "StatusLineNC" }, -- WinBarNC	Window bar of not-current windows.
+		WinBar = { link = "StatusLine" }, -- WinBar		Window bar of current window.
 		WinSeparator = { fg = c.bg2 }, -- WinSeparator	Separators between window splits.
 	}
-
-	if c.bg0 == "NONE" then
-		groups.NormalFloat.bg = c.raisin0
-		groups.FloatBorder = { bg = c.raisin0 }
-	end
-
-	return groups
 end
 
 return setup
