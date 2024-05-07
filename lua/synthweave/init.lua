@@ -22,12 +22,13 @@ function M.load()
 	vim.g.colors_name = "synthweave"
 
 	if M.config.transparent then
+		palette.bg1 = palette.bg0
 		palette.bg0 = "NONE"
 	end
 
-    for color, value in pairs(M.config.palette) do
-        palette[color] = value
-    end
+	for color, value in pairs(M.config.palette) do
+		palette[color] = value
+	end
 
 	hl.load(palette)
 
