@@ -78,9 +78,6 @@ local function setup(c)
 
 		-- json
 		["@boolean.json"] = { fg = c.carrot, italic = true },
-		-- ['@number.json'] = { fg = c.naples_yellow },
-		-- ['@punctuation.bracket.json'] = { fg = c.rose_pink },
-		-- ['@label.json'] = { fg = c.rose_pink },
 
 		-- javascript
 		["@type.javascript"] = { fg = c.pink },
@@ -94,7 +91,8 @@ local function setup(c)
 		-- sql
 		["@keyword.sql"] = { link = "Identifier" },
 
-		--
+		-- markdown
+		["@markup.heading"] = { link = "Title" },
 	}
 end
 
