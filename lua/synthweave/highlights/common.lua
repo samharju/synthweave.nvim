@@ -62,7 +62,7 @@ local function setup(c)
 		Title = { fg = c.carrot }, -- Title		Titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = c.visual }, -- Visual		Visual mode selection.
 		WarningMsg = { fg = c.yellow }, -- WarningMsg	Warning messages.
-		Whitespace = { fg = c.bg1 }, -- Whitespace	"nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
+		Whitespace = { fg = c.bg2 }, -- Whitespace	"nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
 		WildMenu = { fg = c.raisin0, bg = c.yellow }, -- WildMenu	Current match in 'wildmenu' completion.
 		WinBarNC = { link = "StatusLineNC" }, -- WinBarNC	Window bar of not-current windows.
 		WinBar = { link = "StatusLine" }, -- WinBar		Window bar of current window.
