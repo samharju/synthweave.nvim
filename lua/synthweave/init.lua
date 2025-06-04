@@ -1,6 +1,6 @@
-local hl = require("synthweave.highlights")
+local groups = require("synthweave.groups")
 local palette = require("synthweave.palette")
-local apply = require("synthweave.util").apply_hl
+
 local M = {}
 
 ---@class Config
@@ -30,9 +30,7 @@ function M.load()
 		palette[color] = value
 	end
 
-	hl.load(palette)
-
-	apply(M.config.overrides)
+	groups(palette, M.config.overrides)
 end
 
 return M
