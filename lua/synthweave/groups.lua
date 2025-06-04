@@ -175,6 +175,8 @@ return function(c, overrides)
 		NvimTreeGitNew = { fg = c.green_bright },
 		NvimTreeGitDeleted = { fg = c.red },
 
+		-- neotree
+		NeoTreeTitleBar = { fg = c.raisin0, bg = c.fg },
 
 		-- gitgutter
 		GitGutterAdd = { link = "SignAdd" },
