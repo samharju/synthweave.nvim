@@ -65,7 +65,7 @@ return function(c, overrides)
 		Substitute = { fg = c.raisin0, bg = c.carrot },
 		TabLine = { bg = c.bg0 },
 		TabLineFill = { bg = c.bg0 },
-		TabLineSel = { fg = c.yellow, bg = c.bg0 },
+		TabLineSel = { fg = c.fg, bg = c.bg2 },
 		TermCursor = { reverse = true },
 		TermCursorNC = { reverse = true },
 		Title = { fg = c.carrot },
