@@ -15,7 +15,7 @@ return function(c, overrides)
 		SignDelete = { fg = c.red },
 
 		ColorColumn = { bg = c.bg1 },
-		Conceal = { fg = c.fg, bg = c.bg0 },
+		Conceal = { fg = c.gray, bg = c.bg0 },
 		CurSearch = { reverse = true },
 		Cursor = { fg = c.raisin0, bg = c.white },
 		CursorColumn = { link = "CursorLine" },
@@ -131,6 +131,7 @@ return function(c, overrides)
 		Typedef = { link = "Type" },
 
 		["@boolean.json"] = { fg = c.carrot, italic = true },
+		["@conceal"] = { link = "Conceal" },
 		["@constant.bash"] = { fg = c.green_bright },
 		["@constant.go"] = { fg = c.blue_bright },
 		["@constructor"] = { fg = c.red },
